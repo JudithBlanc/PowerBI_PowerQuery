@@ -1,0 +1,39 @@
+Questions Proyect T8
+------------------------------------
+
+1. What code is assigned Tomás Burgos Gutiérrez? 
+
+2. What code is assigned César Reyes Villanueva?
+
+3. At the day 31/12/2023 How many years of experience does Laura Cordero Martínez have?
+
+
+
+1. ANSWER TO QUESTIONS 1 & 2
+
+1. Cleaning:
+I go to NAVIGATION -> remove the first 3 columns and delete the top 2 rows, then return to PROMOTED HEADERS, and the row with the header names becomes the actual headers.
+
+1.1 Generate column with initials:
+Select the NAME column -> Add a column, choose Uppercase format. To identify the initials, I need to create 3 columns: go to Transform / Split column by delimiter (this creates 3 columns: first name, first surname, second surname). To extract the first character from each column, go to Transform / Extract / First Characters, enter “1” as the count. Finally, Transform / Combine Columns, selecting the three newly created columns.
+
+1.2 Generate column with numbers and link to initials:
+Select the new column with initials -> Add column / Column from index / Custom (Start index: 1001, Increment: 1). A new column is created. Then select both columns and go to Add Column / Merge Columns. After merging, delete the two previously created columns.
+
+1.3 To answer the first question, right-click the column with initials and numbering, and enter Tomás Burgos Gutiérrez.
+
+------------------------
+
+2. ANSWER TO QUESTION 3
+
+2. Auxiliary date column:
+The column does not contain all 30 days of the month, so we need to generate them. Right-click -> Change data type to Whole Number (add 30 units). With the column selected, go to Transform / Standard / Add (amount: 30). Then right-click -> Change data type to Date.
+
+2.1 To calculate the years:
+Select the auxiliary date column and the entry date column, then go to Add Column / Date / Subtract Days. The result is in days, but we need it in years. Select the difference column -> right-click: Transform / Duration / Total Years, then go to Transform / Rounding (2 decimal places).
+
+
+
+
+
+
